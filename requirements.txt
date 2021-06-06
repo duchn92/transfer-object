@@ -1,6 +1,6 @@
+opencv-python
 torch
 torchvision
-opencv-python
 dominate
 scipy
 evaluate
