@@ -47,12 +47,12 @@ if __name__ == '__main__':
 
 	# project parameters
 	parser.add_argument('--name', type=str, default='render', help='name of the experiment. It decides where to store samples and models')
-	parser.add_argument('--checkpoints_dir', type=str, default='./checkpoints', help='models are saved here')
 	parser.add_argument('--num_workers', type=int, default=1, help='number worker proccess')
 
 
 	# network parameters
 	parser.add_argument("--batch_size", type=int, default=20, help="the batch_size for training as well as for inference")
+	parser.add_argument('--checkpoints_dir', type=str, default='./checkpoints', help='models are saved here')
 	parser.add_argument('--lr', type=float, default=0.0002, help='initial learning rate for adam')
 	parser.add_argument('--beta1', type=float, default=0.5, help='momentum term of adam')
 	parser.add_argument('--norm', type=str, default='instance', help='instance normalization or batch normalization')
@@ -60,13 +60,10 @@ if __name__ == '__main__':
 	parser.add_argument('--niter', type=int, default=100, help='# of iter at starting learning rate')
 	parser.add_argument('--niter_decay', type=int, default=100, help='# of iter to linearly decay learning rate to zero')
 
-	# parser.add_argument("--data_directory", type=str, default="/media/rainier/rubel/projects/virtual-try-on/dataset/", help="path to the directory having images for training.")
-	# parser.add_argument("--data_directory", type=str, default="/media/tensor/EXTDRIVE/projects/virtual-try-on/dataset/zalando_final/", help="path to the directory having images for training.")
-	parser.add_argument("--data_directory", type=str, default="/Users/nguyenduc/Desktop/app/clothes-transfer/dataset/", help="path to the directory having images for training.")
+	parser.add_argument("--data_directory", type=str, default="%s" % (os.path.join(os.getcwd(), 'dataset/')), help="path to the directory having images for training.")
 	parser.add_argument('--continue_train', action='store_true', help='continue training: load the latest model')
 	parser.add_argument('--load_pretrain', type=str, default='', help='load the pretrained model from the specified location')
 	parser.add_argument('--which_epoch', type=str, default='latest', help='which epoch to load? set to latest to use latest cached model')
-
 
 	# for displays
 	parser.add_argument('--display_freq', type=int, default=1, help='frequency of showing training results on screen')

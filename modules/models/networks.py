@@ -212,7 +212,6 @@ class GlobalGenerator(nn.Module):
 
     def forward(self, input):
         return self.model(input)
-
 # Define a resnet block
 class ResnetBlock(nn.Module):
     def __init__(self, dim, padding_type, norm_layer, activation=nn.ReLU(True), use_dropout=False):

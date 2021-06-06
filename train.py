@@ -131,7 +131,6 @@ def train(config):
 					"generator Loss:{:.4f} ({:.4f})\t"
 					"Discriminator Loss:{:.4f} ({:.4f})\t"
 
-
 					"feature Loss:{:.4f} ({:.4f})\t"
 					"Adversarial Loss:{:.4f} ({:.4f})\t"
 					"Vgg Loss:{:.4f} ({:.4f})".format(epoch, epoch_iter, dataset_size,
